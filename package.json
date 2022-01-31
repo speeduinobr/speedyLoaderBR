@@ -1,0 +1,83 @@
+{
+  "name": "SpeedyLoaderBR",
+  "version": "1.5.1",
+  "description": "Speeduino universal firmware loader",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+	"install": "electron-rebuild -f",
+    "package-mac": "electron-builder --mac",
+    "package-win": "electron-builder --win",
+    "package-linux": "electron-builder --linux",
+    "package-arm": "electron-builder --linux --armv7l"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speeduino/SpeedyLoader"
+  },
+  "author": "Josh Stewart",
+  "email": "sales@speeduino.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/speeduino/SpeedyLoader/issues"
+  },
+  "homepage": "https://github.com/speeduino/SpeedyLoader",
+  "devDependencies": {
+    "electron": "^11.2.0",
+    "electron-packager": "^15.2.0",
+    "electron-rebuild": "^2.3.4"
+  },
+  "dependencies": {
+    "electron-dl": "^3.2.1",
+    "json5": "^2.2.0",
+    "marked": "^0.7.0",
+    "request": "^2.88.0",
+    "semver": "^6.1.3",
+    "serialport": "^9.0.4",
+    "usb": "^1.6.5"
+  },
+  "build": {
+    "appId": "SpeedyLoader",
+    "buildDependenciesFromSource": false,
+    "npmRebuild": false,
+	
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
+      "!**/release-builds/*",
+      "/bin"
+    ],
+    "extraResources": [
+      "bin"
+    ],
+    "win": {
+      "icon": "assets/icons/win/icon.ico",
+      "target": [
+        "portable"
+      ]
+    },
+    "linux": {
+      "icon": "assets/icons/png/512x512.png",
+      "target": [
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "icon": "assets/icons/mac/icon.icns",
+      "target": [
+        "dmg"
+      ]
+    }
+  }
+}
