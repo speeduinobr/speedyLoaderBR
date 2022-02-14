@@ -1,12 +1,12 @@
 {
   "name": "SpeedyLoaderBR",
   "version": "1.5.1",
-  "description": "Speeduino universal firmware loader",
+  "description": "SpeeduinoBR universal firmware loader",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-	"install": "electron-rebuild -f",
+    "install": "electron-rebuild -f",
     "package-mac": "electron-builder --mac",
     "package-win": "electron-builder --win",
     "package-linux": "electron-builder --linux",
@@ -41,7 +41,6 @@
     "appId": "SpeedyLoader",
     "buildDependenciesFromSource": false,
     "npmRebuild": false,
-	
     "files": [
       "**/*",
       "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
@@ -56,7 +55,7 @@
       "!**/{appveyor.yml,.travis.yml,circle.yml}",
       "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
       "!**/release-builds/*",
-      "/bin"
+      "bin"
     ],
     "extraResources": [
       "bin"
